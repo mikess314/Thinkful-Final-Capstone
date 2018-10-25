@@ -1,2 +1,2 @@
 # Thinkful-Final-Capstone
-Clickbait Recognition Model using Text Summarization and Similarity Comparisons
+Text Summarization using Scrapy and RNN
