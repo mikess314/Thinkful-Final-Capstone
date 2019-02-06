@@ -11,7 +11,7 @@ In this capstone I have attempted to create a text summarizer for 3,000 articles
 
 ## Step 1: Gathering Data
 
-![The Daily Caller Front Page 10-24-18](https://imgur.com/a/uzcL0im)
+![The Daily Caller Front Page 10-24-18](dailycaller102418.png)
 
 First, I created a spider to scrape the websites across their respective front pages, going into each article to capture the headline, date, and article text. I did this every 48-72 hours using four separate .py files (dc_recursive, huffpo, politico, & bbcus).
 
@@ -19,7 +19,7 @@ The Daily Caller csv is obtained by running a scrape in Command using Sublime te
 
 scrapy crawl dailycaller -o dcrXXXX.csv -t csv ("XXXX" indicating the date of the scrape) 
 
-![News Scrape Using Command Prompt](scrapycommand.png "News Scrape Using Command Prompt")
+![News Scrape Using Command Prompt](scrapycommand.png)
 
 The same can be done for similar scraping code written for Politico (politico), Huffington Post (huffpo) and BBC US (bbcus). For each scrape's CSV I manually inspect the articles and eliminate those where the scrape failed to properly collect the headline or article. This was most common in BBC US articles that would often using a recurring headline for geographic areas or topics such as "Africa" and "Health", usually accounting for approximately 30% of BBC scrapes. Just as common, though to a lesser extent, about 5% of The Daily Caller articles, mostly from the "Opinion" section would return empty space for the article.
 
@@ -52,7 +52,7 @@ OPINION: Hurricane Hyperbole — Politicizing Tragedy | world war 3 is not a tru
 
 Despite using over a dozen variations of RNNs, GloVe embeddings, Seq2Seq modeling, and a variety of hyperparameter adjustments, some of which were left out of this Notebook, over the course of weeks I can see that the RNN is still encountering great difficulty summarizing against large text files like full news articles. While accuracy increases in the overall training set, validation accuracy improves somewhat, but not nearly enough to summarize the entire article. 
 
-![RNN1 Training Results](recursive-rnn-1-history.png "RNN1 Training Results")
+![RNN1 Training Results](recursive-rnn-1-history.png)
 
 A potential course of action for future development may be to summarize individual paragraphs or even sentences in articles, combine those summaries into new DataFrames train/test splits and attempt summarizations on the summaries. 
 
