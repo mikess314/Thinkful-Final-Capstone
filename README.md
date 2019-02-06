@@ -11,7 +11,7 @@ In this capstone I have attempted to create a text summarizer for 3,000 articles
 
 ## Step 1: Gathering Data
 
-![The Daily Caller Front Page 10-24-18](dailycaller102418.png "The Daily Caller Front Page 10-24-18")
+![The Daily Caller Front Page 10-24-18](dailycaller102418.png)
 
 First, I created a spider to scrape the websites across their respective front pages, going into each article to capture the headline, date, and article text. I did this every 48-72 hours using four separate .py files (dc_recursive, huffpo, politico, & bbcus).
 
